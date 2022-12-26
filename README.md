@@ -6,3 +6,24 @@
 # [Keith-Babel-JSX](https://github.com/KeithWang2019/Keith-Babel-JSX)
 
 
+```json
+{
+  test: /\.jsx?$/,
+  exclude: /node_modules/,
+  use: {
+    loader: "babel-loader",
+    options: {
+      presets: ["@babel/preset-env"],
+      plugins: [
+        [
+          "@babel/plugin-transform-react-jsx",
+          {
+            runtime: "automatic",
+            importSource: "@keithwang/keith-babel-jsx",
+          },
+        ],
+      ],
+    },
+  },
+}
+```
