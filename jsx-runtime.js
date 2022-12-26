@@ -72,6 +72,9 @@ const jsx = async (tag, { ref, children, ...allProps } = {}, key) => {
           case "onclick":
             vnode.addEventListener("click", events[eventName]);
             break;
+          case "onchange":
+            vnode.addEventListener("change", events[eventName]);
+            break;
           default:
             // 过滤方法，防止闭包引起的无法释放问题。
             break;
@@ -79,7 +82,7 @@ const jsx = async (tag, { ref, children, ...allProps } = {}, key) => {
       }
     });
 
-    vnode.setClass(className);     
+    vnode.setClass(className);
     vnode.setStyle(style);
 
     Object.keys(props).forEach((propKey) => {
