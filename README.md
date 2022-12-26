@@ -1,5 +1,1 @@
-# Keith-Babel-JSX
-这是一个简化版的JSX引擎
-
-https://github.com/KeithWang2019/Keith-Core  
-https://github.com/KeithWang2019/Keith-Demo
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE)
