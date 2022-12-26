@@ -47,13 +47,16 @@ const appendChildren = async (vnode, children) => {
 const jsx = async (tag, { ref, children, ...allProps } = {}, key) => {
   let props = {};
   let events = {};
-  let styles = {};
+  let className = {};
+  let style = {};
   Object.keys(allProps).forEach((propKey) => {
     let name = propKey.toLowerCase();
     if (name.startsWith("on")) {
       events[propKey] = allProps[propKey];
+    } else if (name == "classname") {
+      className = allProps[propKey];
     } else if (name == "style") {
-      styles[propKey] = allProps[propKey];
+      style = allProps[propKey];
     } else {
       props[propKey] = allProps[propKey];
     }
@@ -76,12 +79,8 @@ const jsx = async (tag, { ref, children, ...allProps } = {}, key) => {
       }
     });
 
-    Object.keys(styles).forEach((styleName) => {
-      let obj = styles[styleName];
-      Object.keys(obj).forEach((name) => {
-        vnode.setStyle(name, obj[name]);
-      });
-    });
+    vnode.setClass(className);     
+    vnode.setStyle(style);
 
     Object.keys(props).forEach((propKey) => {
       vnode.setAttribute(propKey, props[propKey]);
