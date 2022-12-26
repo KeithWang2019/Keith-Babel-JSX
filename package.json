@@ -1,8 +1,14 @@
 {
   "name": "@keithwang/keith-babel-jsx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
-  "main": "jsx-runtime.js", 
+  "keywords": [
+    "plugin-transform-react-jsx",
+    "importSource",
+    "jsx-runtime",
+    "jsx"
+  ],
+  "main": "jsx-runtime.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KeithWang2019/Keith-Babel-JSX.git"
