@@ -8,6 +8,10 @@ async function transformElement(vnode) {
   }
 
   switch (typeof vnode) {
+    case "undefined":
+      let space = new VNode("#text");
+      space.value = "undefined";
+      return space;
     case "string":
     case "number":
       let text = new VNode("#text");
@@ -95,8 +99,6 @@ const jsx = async (tag, { ref, children, ...allProps } = {}, key) => {
 
     if (ref) {
       if (typeof ref === "function") {
-        // ref(vnode);
-        // debugger;
         vnode.setRef(ref);
       } else {
         throw "ref必须绑定方法:" + tag + "," + ref;
@@ -126,7 +128,6 @@ const jsxs = jsx;
 
 const Fragment = ({ children } = {}) => {
   const element = document.createDocumentFragment();
-
   return appendChildren(element, children);
 };
 
