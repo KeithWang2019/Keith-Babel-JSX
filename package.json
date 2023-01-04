@@ -1,6 +1,6 @@
 {
   "name": "@keithwang/keith-babel-jsx",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "keywords": [
     "plugin-transform-react-jsx",
