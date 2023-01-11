@@ -7,6 +7,13 @@ async function transformElement(vnode) {
     return await vnode;
   }
 
+  if (vnode == null) {
+    // 处理空节点
+    let space = new VNode("#text");
+    space.value = "";
+    return space;
+  }
+
   switch (typeof vnode) {
     case "undefined":
       let space = new VNode("#text");
