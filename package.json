@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/KeithWang2019/Keith-Babel-JSX#readme",
   "dependencies": {
-    "@keithwang/keith-core": "^1.0.14"
+    "@keithwang/keith-core": "^1.0.18"
   }
 }
