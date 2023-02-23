@@ -86,6 +86,15 @@ const jsx = async (tag, { ref, children, ...allProps } = {}, key) => {
           case "onchange":
             vnode.addEventListener("change", events[eventName]);
             break;
+          case "ontouchstart":
+            vnode.addEventListener("touchstart", events[eventName]);
+            break;
+          case "ontouchmove":
+            vnode.addEventListener("touchmove", events[eventName]);
+            break;
+          case "ontouchend":
+            vnode.addEventListener("touchend", events[eventName]);
+            break;
           default:
             // 过滤方法，防止闭包引起的无法释放问题。
             break;
